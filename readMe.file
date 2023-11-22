@@ -1,0 +1,84 @@
+Loom Video Link: https://www.loom.com/share/7c8b945926cb4dc49658ce0e0c1edbdb?sid=969465ee-d206-497e-b611-a473d9ff8b24
+
+Project Name
+To find the Height of a Binary Tree.
+
+Inputs
+Binary Tree is defined as a tree data structure where each node has at most 2 children.
+Since each element in a binary tree can have only 2 children,
+we typically name them the left and right child.
+A Binary tree is represented by a pointer to the topmost node (commonly known as the “root”) of the tree. If the tree is empty, then the value of the root is NULL. Each node of a Binary Tree contains the following parts:
+
+Data
+Pointer to left child
+Pointer to right child
+
+Outputs
+Using a recursive calculation, get the height of the left and the right subtrees of a node
+and then assign height to the node as max of the heights of two children plus 1.
+The output for the (index2.js): Height of tree is : 4
+
+
+Assumptions
+Given a binary tree, the task is to find the height of the tree.
+The height of the tree is the number of edges in the tree from the root to the deepest node. 
+
+Algorithm
+Example Depth-first search (DFS) Algorithm:
+maxDepth(‘1’) = max(maxDepth(‘2’), maxDepth(‘3’)) + 1 = 2 + 1
+
+because recursively 
+maxDepth(‘2’) =  max (maxDepth(‘4’), maxDepth(‘5’)) + 1 = 1 + 1 and  (as height of both ‘4’ and ‘5’ are 1)
+maxDepth(‘3’) = 1
+
+Pseudo Code
+Step-by-step Implementation of the idea:
+
+Recursively do a Depth-first search.
+If the tree is empty then return 0
+Otherwise, do the following
+Get the max depth of the left subtree recursively  i.e. call maxDepth( tree->left-subtree)
+Get the max depth of the right subtree recursively  i.e. call maxDepth( tree->right-subtree)
+Get the max of max depths of left and right subtrees and add 1 to it for the current node.
+max_depth = max(max dept of left subtree,  max depth of right subtree) + 1
+Return max_depth.
+
+Time and Space Complexity
+Time Complexity: best case: O(N) / O(V+E), since in the worst case, BFS algorithm explores every node and edge.
+The time complexity of the DFS algorithm is O(V+E), where V is the number of vertices and E is the number of edges in the graph.
+Space Complexity: O(N) due to recursive stack.
+
+Scalability
+This program can be easily scaled up to handle larger and more complex trees by using different traversals,
+such as a Breadth First Search or BFS that uses Boundary Traversal or Diagonal Traversal
+where the all the nodes in a single diagonal will be printed one by one.
+
+Usage
+-Set up a binary tree node
+-Compute the "maxDepth" of a tree -- the number of
+nodes along the longest path from the root node down to the farthest leaf node.
+-compute the depth of each subtree
+-use the larger one
+-Use a Driver program to test the functions already made for both left and right nodes
+-console.log the output
+
+Real-World Applications
+BSTs are used for indexing in databases.
+It is used to implement searching algorithms.
+BSTs are used to implement Huffman coding algorithm.
+It is also used to implement dictionaries.
+Used for data caching.
+Used in Priority queues.
+Used in spell checkers.
+
+References:
+https://www.canva.com/design/DAFs2Q4eJfA/TiXvaPNY7XZGfYs6nivP_w/edit?category=tAEv8Hh5on0
+https://vanya.jp.net/vtree/
+https://www.baeldung.com/cs/binary-tree-height
+https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/
+https://www.geeksforgeeks.org/height-and-depth-of-a-node-in-a-binary-tree/?ref=gcse
+https://www.geeksforgeeks.org/applications-advantages-and-disadvantages-of-binary-search-tree/
+https://www.youtube.com/watch?v=Pivw7bIEB3I
+https://www.youtube.com/watch?v=AWIJwNf0ZQE
+https://stackoverflow.com/questions/46393411/find-the-shortest-path-from-the-mazebreadth-first-search
+https://stackoverflow.com/questions/66497915/javascript-get-shortest-path-in-binary-matrix-using-bfs
